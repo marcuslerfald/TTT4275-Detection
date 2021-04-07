@@ -1,2 +1,1 @@
-# TTT4275
-Detection project
+# TTT4275 Detection project
