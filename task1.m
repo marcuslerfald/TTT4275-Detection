@@ -32,6 +32,7 @@ sigma_s = var_r + var_i;
 
 %% Plot pdf(s)
 
+figure(2);
 x = [-3:.1:3];
 y = normpdf(x, real(mu_s), sigma_s);
 plot(x, y);
