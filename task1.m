@@ -24,7 +24,8 @@ E_si_si = mean(s_r.*s_i)
 
 var_r = var(s_r);
 var_i = var(s_i);
-sigma_s = var_r + var_i;
+var_s = var_r + var_i;
+sigma_s = sqrt(var_s);
 
 %% Plot pdf(s)
 
