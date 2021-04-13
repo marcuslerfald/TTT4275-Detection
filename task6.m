@@ -5,11 +5,11 @@ clf
 lambda = 0:0.1:5000;
 var_w = var(w);
 var_s = var(s_t);
-K = length(s_t);
-P_D = 1-normcdf(lambda, 0.5*K*(var_w+var_s), sqrt(K/4)*(var_w+var_s));
-P_FA = 1-normcdf(lambda, K*(var_w), sqrt(K)*(var_w));
-P_D_actual = gammainc(lambda/(var_w+var_s), K, 'upper');
-P_FA_actual = gammainc(lambda/var_w, K, 'upper');
+N = length(s_t);
+P_D = 1-normcdf(lambda, N*(var_w+var_s), sqrt(N)*(var_w+var_s));
+P_FA = 1-normcdf(lambda, N*(var_w), sqrt(N)*(var_w));
+P_D_actual = gammainc(lambda/(var_w+var_s), N, 'upper');
+P_FA_actual = gammainc(lambda/var_w, N, 'upper');
 figure(1)
 plot(lambda, P_FA)
 hold on
