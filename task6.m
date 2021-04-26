@@ -18,7 +18,7 @@ ylabel('P_{FA}')
 xlabel("\lambda'")
 legend('Approximate P_{FA}', 'Actual P_{FA}')
 figure(2)
-plot(lambda, p_d)
+plot(lambda, P_D)
 hold on
 plot(lambda, P_D_actual)
 ylabel('P_{D}')
