@@ -6,10 +6,12 @@ var_s = 5;
 var_w = 1;
 N = 256;
 P_FA = 0.1;
-%lambda = sqrt(N)*var_w*norminv(P_FA)+N*var_w;
-%lambda = norminv(1-P_FA, N*var_w, N*var_w^2);
-lambda = var_w*gammaincinv(P_FA, N, 'upper');
-%P_D = normcdf((lambda-N*(var_s+var_w))/(sqrt(N)*(var_w+var_s)));
+
+lambda = sqrt(N)*var_w*norminv(1 - P_FA)+N*var_w;
+lambda_true = (var_w/2)*chi2inv(1 - P_FA, 2*N);
+
+P_D = 1 - normcdf((lambda-N*(var_s+var_w))/(sqrt(N)*(var_w+var_s)));
+
 NP_detector = NaN(100,2);
 hits = 0;
 for i = 1:100
